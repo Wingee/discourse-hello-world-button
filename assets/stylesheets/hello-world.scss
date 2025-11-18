@@ -14,3 +14,15 @@
 .hello-world-button:hover {
     background: #c41f1a !important;
 }
+
+.hello-world-button {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    background: #c81e1e;
+    /* red */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
