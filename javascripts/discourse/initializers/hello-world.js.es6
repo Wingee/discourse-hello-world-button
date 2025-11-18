@@ -25,3 +25,5 @@ export default {
         withPluginApi("1.8.0", initHello);
     }
 };
+
+console.log("HELLO WORLD PLUGIN INITIALIZER RUNNING");
