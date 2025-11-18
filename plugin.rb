@@ -4,8 +4,6 @@
 # version: 1.0
 # authors: engwei + Grok
 
-# Register your SCSS
-register_asset "stylesheets/hello-world.scss"
-
-# Register your JavaScript
-register_asset "javascripts/discourse/initializers/hello-world.js.es6"
+after_initialize do
+  # Ruby plugin code (if any) goes here
+end
