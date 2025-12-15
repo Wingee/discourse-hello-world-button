@@ -6,20 +6,17 @@ export default {
     initialize() {
         withPluginApi("1.8.0", api => {
 
-            // Extend the Topic Footer Buttons component
-            api.modifyClass("component:topic-footer-buttons", {
-                pluginId: "hello-world-button",
-
-                didInsertElement() {
-                    // Create a button element using helper
-                    const button = this.container.lookup("service:site")._container.ownerDocument.createElement("button");
-                    button.className = "hello-world-button";
-                    button.innerText = "HELLO WORLD";
-                    button.onclick = () => alert("HELLO WORLD FROM ENGWEI! 🎉");
-
-                    // Append it to the footer
-                    this.element.appendChild(button);
-                }
+            // This is the new supported way for topic-footer-buttons
+            api.decorateWidget("topic-footer-buttons:after", helper => {
+                return helper.h(
+                    "button.hello-world-button",
+                    {
+                        onclick() {
+                            alert("HELLO WORLD FROM ENGWEI! 🎉");
+                        }
+                    },
+                    "HELLO WORLD"
+                );
             });
 
         });
