@@ -6,8 +6,8 @@ export default {
     initialize() {
         withPluginApi("1.8.0", api => {
 
-            // Define a custom widget
-            api.addWidget("hello-world-button", helper => {
+            // Append a button after the topic footer buttons
+            api.decorateWidget("topic-footer-buttons:after", helper => {
                 return helper.h("button.hello-world-button", {
                     onclick() {
                         alert("HELLO WORLD FROM ENGWEI! 🎉");
@@ -15,15 +15,8 @@ export default {
                 }, "HELLO WORLD");
             });
 
-            // Attach it to the topic footer
-            api.modifyClass("component:topic-footer-buttons", {
-                pluginId: "hello-world-button",
-
-                didInsertElement() {
-                    this.addChild("hello-world-button");
-                }
-            });
-
         });
+
+        console.log("HELLO WORLD PLUGIN INITIALIZER RUNNING");
     }
 };
