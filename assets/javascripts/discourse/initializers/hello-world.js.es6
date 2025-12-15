@@ -6,12 +6,25 @@ export default {
     initialize() {
         withPluginApi("1.8.0", api => {
 
-            api.decorateWidget("topic-footer-buttons:after", helper => {
-                return helper.h("button.hello-world-button", {
-                    onclick() {
-                        alert("HELLO WORLD FROM ENGWEI! 🎉");
-                    }
-                }, "HELLO WORLD");
+            // Add a new widget
+            api.addWidget("hello-world-button", helper => {
+                return helper.h(
+                    "button.hello-world-button",
+                    {
+                        onclick() {
+                            alert("HELLO WORLD FROM ENGWEI! 🎉");
+                        }
+                    },
+                    "HELLO WORLD"
+                );
+            });
+
+            // Attach it to topic footer
+            api.modifyClass("component:topic-footer-buttons", {
+                pluginId: "hello-world-button",
+                didInsertElement() {
+                    this.addChild("hello-world-button");
+                }
             });
 
         });

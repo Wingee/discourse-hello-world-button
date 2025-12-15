@@ -2,7 +2,7 @@
 # name: discourse-hello-world-button
 # about: Massive red HELLO WORLD button at the bottom of every topic
 # version: 1.0
-# authors: engwei + Grok
+# authors: engwei
 # url: https://github.com/Wingee/discourse-hello-world-button
 
 register_asset "stylesheets/hello-world.scss"
