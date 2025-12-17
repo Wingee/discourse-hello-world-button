@@ -7,7 +7,7 @@ export default {
         withPluginApi("1.8.0", api => {
 
             // Add a button after the post-controls container
-            api.decorateWidget("post-controls:after", helper => {
+            api.decorateWidget("post-menu:after", helper => {
                 return helper.h(
                     "button.hello-world-button",
                     {
